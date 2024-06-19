@@ -8,8 +8,12 @@ export default function SignUpUser() {
         formState: { errors },
     } = useForm();
     const onSubmit = (data) => {
-        console.log(data);
-        
+        if (data.password === data.confirmPassword) {
+            console.log(data);
+            alert(`First Name: ${data.firstName}, Last Name: ${data.lastName}, User Name: ${data.userName}, Email: ${data.email}, Password: ${data.password}`);
+        } else {
+            alert("Password does not match");
+        }
     };
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="hook">
@@ -44,7 +48,7 @@ export default function SignUpUser() {
                 {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
             />
             {errors.email && <p className="hook__error">Email is required and must be valid</p>}
-            
+
             <label className="hook__text">Password</label>
             <input
                 type="password"
@@ -52,7 +56,7 @@ export default function SignUpUser() {
                 {...register("password", { required: true })}
             />
             {errors.password && <p className="hook__error">Password is required</p>}
-            
+
             <label className="hook__text">Confirm Password</label>
             <input
                 type="password"

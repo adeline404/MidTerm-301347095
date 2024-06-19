@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import AddProduct from './components/AddProduct'
 import SignUpUser from './components/SignUpUser'
@@ -10,8 +8,14 @@ function App() {
 
   return (
     <div>
-      <AddProduct />
-      <SignUpUser />
+      <div>
+        <h1>Question 1:</h1>
+        <AddProduct />
+      </div>
+      <div id="q2">
+        <h1>Question 2:</h1>
+        <SignUpUser />
+      </div>
     </div>
   )
 }

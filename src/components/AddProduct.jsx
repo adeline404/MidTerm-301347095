@@ -21,10 +21,9 @@ export default function AddProduct() {
         setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
     };
     const handleSubmit = (event) => {
-        let allData = `Name: ${formData.name}, Description: ${formData.description}, Category: ${formData.category}, Quantity: ${formData.quantity}, Price: ${formData.price}`;
         event.preventDefault();
-        console.log(allData);
-        alert(allData);
+        console.log(formData);
+        alert(`Name: ${formData.name}, Description: ${formData.description}, Category: ${formData.category}, Quantity: ${formData.quantity}, Price: ${formData.price}`);
     };
     const handleReset = () => {
         setFormData({ ...initialState });
@@ -83,12 +82,14 @@ export default function AddProduct() {
                 value={formData.price}
                 onChange={handleChange}
             />
-            <button className="multiple__button" type="submit">
-                SUBMIT
-            </button>
-            <button className="multiple__button" type="reset" onClick={handleReset}>
-                CANCEL
-            </button>
+            <div>
+                <button className="multiple__button" type="submit">
+                    SUBMIT
+                </button>
+                <button className="multiple__button" type="reset" onClick={handleReset}>
+                    CANCEL
+                </button>
+            </div>
         </form>
     );
 }
