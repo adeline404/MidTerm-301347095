@@ -55,7 +55,7 @@ export default function AddProduct() {
             <label className="multiple__text" htmlFor="category">
                 Category:
             </label>
-            <textarea
+            <input
                 id="category"
                 className="multiple__input"
                 name="category"
@@ -65,7 +65,7 @@ export default function AddProduct() {
             <label className="multiple__text" htmlFor="quantity">
                 Quantity:
             </label>
-            <textarea
+            <input
                 id="quantity"
                 className="multiple__input"
                 name="quantity"
@@ -75,7 +75,7 @@ export default function AddProduct() {
             <label className="multiple__text" htmlFor="price">
                 Price:
             </label>
-            <textarea
+            <input
                 id="price"
                 className="multiple__input"
                 name="price"
